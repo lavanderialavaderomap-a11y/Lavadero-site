@@ -1,0 +1,124 @@
+index.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lavanderia Lavadero</title>
+<style>
+  /* Reset */
+  * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+  body { background-color:#f9f9f9; color:#333; scroll-behavior: smooth; }
+
+  /* Cabeçalho */
+  header { background:#0077b6; color:#fff; padding:20px 30px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; }
+  header h1 { font-size:1.8rem; }
+  nav a { color:#fff; text-decoration:none; margin-left:20px; font-weight:bold; transition:0.3s; }
+  nav a:hover { color:#90e0ef; }
+
+  /* Hero */
+  .hero { background:#90e0ef; text-align:center; padding:80px 20px; background-image: url('https://images.unsplash.com/photo-1592194996308-7b43878e84a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGxhdmFuZGVyaWElMjByb29tJTIwc2VydmljZXN8ZW58MHx8MHx8&ixlib=rb-4.0.3&q=80&w=1080'); background-size: cover; background-position: center; color:#fff; }
+  .hero h2 { font-size:2.2rem; margin-bottom:20px; text-shadow:1px 1px 4px rgba(0,0,0,0.6); }
+  .hero p { font-size:1.2rem; margin-bottom:30px; text-shadow:1px 1px 4px rgba(0,0,0,0.5); }
+  .hero a { background:#0077b6; color:#fff; padding:15px 30px; text-decoration:none; border-radius:10px; font-weight:bold; transition:0.3s; }
+  .hero a:hover { background:#023e8a; }
+
+  /* Planos */
+  .planos { display:flex; justify-content:center; flex-wrap:wrap; padding:50px 20px; gap:20px; }
+  .plano { background:#fff; border-radius:15px; padding:30px; width:300px; box-shadow:0 6px 15px rgba(0,0,0,0.1); text-align:center; transition:0.3s; }
+  .plano:hover { transform: translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
+  .plano h3 { font-size:1.6rem; margin-bottom:15px; color:#0077b6; }
+  .plano p { margin-bottom:10px; font-size:1.1rem; }
+  .plano a { display:inline-block; background:#0077b6; color:#fff; padding:12px 25px; border-radius:10px; font-weight:bold; text-decoration:none; transition:0.3s; }
+  .plano a:hover { background:#023e8a; }
+
+  /* Serviços */
+  .servicos { padding:50px 20px; text-align:center; }
+  .servicos h2 { margin-bottom:30px; font-size:2rem; color:#0077b6; }
+  .servicos ul { list-style:none; }
+  .servicos li { margin-bottom:15px; font-size:1.1rem; }
+
+  /* Contato */
+  .contato { background:#0077b6; color:#fff; padding:50px 20px; text-align:center; }
+  .contato h2 { margin-bottom:30px; }
+  .contato form { max-width:450px; margin:0 auto; display:flex; flex-direction:column; gap:15px; }
+  .contato input, .contato textarea { padding:12px; border-radius:10px; border:none; }
+  .contato button { background:#90e0ef; color:#0077b6; border:none; padding:12px; border-radius:10px; font-weight:bold; cursor:pointer; transition:0.3s; }
+  .contato button:hover { background:#00b4d8; color:#fff; }
+
+  /* Rodapé */
+  footer { background:#023e8a; color:#fff; text-align:center; padding:20px; font-size:0.9rem; }
+
+  /* Responsivo */
+  @media(max-width:768px){ .planos { flex-direction:column; align-items:center; } }
+</style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Lavadero</h1>
+    <nav>
+      <a href="#planos">Planos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
+      <a href="https://wa.me/seunumerodetelefone" target="_blank">WhatsApp</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Lavadero – Cuidamos das suas roupas como você cuidaria</h2>
+    <p>Planos de lavanderia que facilitam sua rotina, com coleta e entrega em casa.</p>
+    <a href="https://wa.me/seunumerodetelefone?text=Quero%20agendar%20uma%20coleta" target="_blank">Agendar Coleta</a>
+  </section>
+
+  <!-- Planos -->
+  <section class="planos" id="planos">
+    <div class="plano">
+      <h3>Plano Plus</h3>
+      <p>R$230/mês</p>
+      <p>30 peças por semana</p>
+      <p>Roupas + cama, mesa e banho</p>
+      <a href="https://wa.me/seunumerodetelefone?text=Quero%20assinar%20o%20Plano%20Plus" target="_blank">Assinar Agora</a>
+    </div>
+    <div class="plano">
+      <h3>Plano Básico</h3>
+      <p>R$160/mês</p>
+      <p>25 peças por semana</p>
+      <p>Somente roupas do dia a dia</p>
+      <a href="https://wa.me/seunumerodetelefone?text=Quero%20assinar%20o%20Plano%20Básico" target="_blank">Assinar Agora</a>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section class="servicos" id="servicos">
+    <h2>Serviços Especiais</h2>
+    <ul>
+      <li>Lavagem de tapetes</li>
+      <li>Lavagem de cortinas</li>
+      <li>Lavagem de edredons</li>
+      <li>Promoções semanais</li>
+    </ul>
+  </section>
+
+  <!-- Contato -->
+  <section class="contato" id="contato">
+    <h2>Agende sua coleta</h2>
+    <form action="https://docs.google.com/forms/d/e/SEU_FORM_ID/formResponse" method="POST" target="_blank">
+      <input type="text" name="entry.1234567890" placeholder="Nome" required>
+      <input type="tel" name="entry.0987654321" placeholder="Telefone" required>
+      <input type="text" name="entry.1122334455" placeholder="Endereço" required>
+      <textarea name="entry.6677889900" placeholder="Tipo de serviço" rows="3" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <p style="margin-top:10px;">Ou envie pelo WhatsApp <a href="https://wa.me/seunumerodetelefone?text=Quero%20agendar%20uma%20coleta" style="color:#90e0ef;" target="_blank">clicando aqui</a></p>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    Lavanderia Lavadero &copy; 2025 | Monte Azul Paulista - SP | <a href="https://wa.me/seunumerodetelefone" style="color:#90e0ef;">WhatsApp</a>
+  </footer>
+
+</body>
+</html>
