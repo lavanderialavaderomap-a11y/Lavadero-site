@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lavanderia Lavadero</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #007BFF, #FFD700);
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+#splash {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#splash img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+button {
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #FFC107;
+}
+
+#home {
+  display: none;
+  padding: 20px;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+header img {
+  width: 120px;
+  height: auto;
+}
+
+.section {
+  margin: 20px 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 20px;
+  margin: 10px;
+  backdrop-filter: blur(6px);
+}
+
+.card button {
+  margin-top: 10px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 90%;
+  text-align: left;
+}
+
+.close-btn {
+  background: #007BFF;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  float: right;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+</style>
+</head>
+<body>
+
+<!-- Tela inicial -->
+<div id="splash">
+  <img src="imagens/logo.png" alt="Lavanderia Lavadero">
+  <button onclick="entrarSite()">Bem-vindo</button>
+</div>
+
+<!-- Página principal -->
+<div id="home">
+  <header>
+    <img src="imagens/logo.png" alt="Logo Lavadero">
+  </header>
+
+  <section class="section">
+    <h2>Planos</h2>
+    <div class="card">
+      <h3>Plano Plus</h3>
+      <p>R$230,00/mês - 30 peças por semana (120 peças/mês)</p>
+      <button onclick="abrirPopup('plus')">Ver detalhes</button>
+    </div>
+
+    <div class="card">
+      <h3>Plano Básico</h3>
+      <p>R$160,00/mês - 25 peças por semana (100 peças/mês)</p>
+      <button onclick="abrirPopup('basico')">Ver detalhes</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Outros Serviços</h2>
+    <div class="card">
+      <h3>Lavagem de Tênis</h3>
+      <button onclick="abrirPopup('tenis')">Ver detalhes</button>
+    </div>
+
+    <div class="card">
+      <h3>Limpeza de Cortinas e Edredons</h3>
+      <button onclick="abrirPopup('cortina')">Ver detalhes</button>
+    </div>
+  </section>
+
+  <button onclick="abrirPopup('termos')">Termos e Condições</button>
+
+  <footer>
+    Lavanderia Lavadero © 2025 - Todos os direitos reservados.
+  </footer>
+</div>
+
+<!-- Pop-ups -->
+<div class="popup" id="popup-plus">
+  <div class="popup-content">
+    <h3>Plano Plus</h3>
+    <p>Inclui roupas do dia a dia, cama, mesa e banho. 30 peças/semana.</p>
+    <button onclick="window.open('https://api.whatsapp.com/send?phone=5517991980884&text=Olá,%20quero%20contratar%20o%20Plano%20Plus%20da%20Lavanderia%20Lavadero.%20Gostaria%20de%20confirmar%20os%20detalhes%20e%20finalizar%20meu%20pedido.','_blank')">Finalizar Pedido</button>
+    <button class="close-btn" onclick="fecharPopup('plus')">Fechar</button>
+  </div>
+</div>
+
+<div class="popup" id="popup-basico">
+  <div class="popup-content">
+    <h3>Plano Básico</h3>
+    <p>Roupas do dia a dia. 25 peças por semana (100 peças/mês).</p>
+    <button onclick="window.open('https://api.whatsapp.com/send?phone=5517991980884&text=Olá,%20quero%20contratar%20o%20Plano%20Básico%20da%20Lavanderia%20Lavadero.%20Gostaria%20de%20confirmar%20os%20detalhes%20e%20finalizar%20meu%20pedido.','_blank')">Finalizar Pedido</button>
+    <button class="close-btn" onclick="fecharPopup('basico')">Fechar</button>
+  </div>
+</div>
+
+<div class="popup" id="popup-tenis">
+  <div class="popup-content">
+    <h3>Lavagem de Tênis</h3>
+    <p>Limpeza detalhada e higienização de calçados esportivos.</p>
+    <button onclick="window.open('https://api.whatsapp.com/send?phone=5517991980884&text=Olá,%20tenho%20interesse%20no%20serviço%20de%20Lavagem%20de%20Tênis%20da%20Lavanderia%20Lavadero.%20Por%20favor,%20me%20envie%20os%20detalhes%20para%20finalizar%20o%20pedido.','_blank')">Finalizar Pedido</button>
+    <button class="close-btn" onclick="fecharPopup('tenis')">Fechar</button>
+  </div>
+</div>
+
+<div class="popup" id="popup-cortina">
+  <div class="popup-content">
+    <h3>Limpeza de Cortinas e Edredons</h3>
+    <p>Higienização completa e cuidado especial para peças volumosas.</p>
+    <button onclick="window.open('https://api.whatsapp.com/send?phone=5517991980884&text=Olá,%20quero%20contratar%20o%20serviço%20de%20Limpeza%20de%20Cortinas%20e%20Edredons%20da%20Lavanderia%20Lavadero.%20Gostaria%20de%20confirmar%20os%20detalhes.','_blank')">Finalizar Pedido</button>
+    <button class="close-btn" onclick="fecharPopup('cortina')">Fechar</button>
+  </div>
+</div>
+
+<!-- Termos -->
+<div class="popup" id="popup-termos">
+  <div class="popup-content">
+    <h2>Termos e Condições</h2>
+    <p><strong>Direitos e Obrigações do Cliente:</strong><br>
+    1. Verificar bolsos antes da entrega.<br>
+    2. Lavadero não se responsabiliza por objetos esquecidos.<br>
+    3. Pagamento conforme plano escolhido.<br>
+    4. Manchas antigas podem não ser totalmente removidas.</p>
+
+    <p><strong>Direitos e Obrigações da Lavadero:</strong><br>
+    1. Garantia de limpeza e conservação.<br>
+    2. Cumprimento de prazos de coleta e entrega.<br>
+    3. Indenização por extravio conforme valor estimado.<br>
+    4. Serviços seguem padrões de qualidade profissional.</p>
+
+    <button class="close-btn" onclick="fecharPopup('termos')">Fechar</button>
+  </div>
+</div>
+
+<script>
+function entrarSite(){
+  document.getElementById('splash').style.display='none';
+  document.getElementById('home').style.display='block';
+}
+
+function abrirPopup(id){
+  document.getElementById('popup-'+id).style.display='flex';
+}
+
+function fecharPopup(id){
+  document.getElementById('popup-'+id).style.display='none';
+}
+</script>
+
+</body>
+</html>
